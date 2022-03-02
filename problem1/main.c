@@ -36,12 +36,14 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    
+    //Leer el tamaño del arreglo (Ejercicio 7 parte 2)
+//Crear el vector en el heap
+
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
-    
+    //Leer cada elemento y comparar el arreglo
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
