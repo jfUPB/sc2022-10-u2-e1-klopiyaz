@@ -36,8 +36,18 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    //Leer el tamaño del arreglo (Ejercicio 7 parte 2)
-//Crear el vector en el heap
+    //Leer el tamaño del arreglo (Ejercicio 7 parte 2)   
+     int val;
+    char number[5];
+
+    printf("Enter an integer number: ");
+    if (fgets(number, 5, stdin) != NULL)
+    {
+        number[strlen(number) -1 ] = 0;
+        printf("The string to convert is %s\n", number);
+    }
+    int successItems = sscanf(number,"%d",&val);
+    //Crear el vector en el heap
 
 }
 
