@@ -46,6 +46,9 @@ void getArray(struct array *parr)
         number[strlen(number) -1 ] = 0;
         printf("The string to convert is %s\n", number);
     }
+        for(u_int8_t i = 0; i < strlen(number);i++){
+        printf("age[%d]: %c\n",i,number[i]);
+    }
     int successItems = sscanf(number,"%d",&val);
     if(successItems == 1){
         printf("val: %d\n", val);
@@ -53,6 +56,7 @@ void getArray(struct array *parr)
     else{
         printf("sscanf fails\n");
     }
+    
 
     exit(EXIT_SUCCESS);
     //Crear el vector en el heap
