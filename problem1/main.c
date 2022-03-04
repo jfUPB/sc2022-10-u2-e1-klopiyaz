@@ -47,8 +47,16 @@ void getArray(struct array *parr)
         printf("The string to convert is %s\n", number);
     }
     int successItems = sscanf(number,"%d",&val);
-    //Crear el vector en el heap
+    if(successItems == 1){
+        printf("val: %d\n", val);
+    }
+    else{
+        printf("sscanf fails\n");
+    }
 
+    exit(EXIT_SUCCESS);
+    //Crear el vector en el heap
+    
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
