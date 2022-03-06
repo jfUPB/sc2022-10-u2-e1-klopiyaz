@@ -37,28 +37,19 @@ void printArray(struct array *parr)
 void getArray(struct array *parr)
 {
     //Leer el tamaño del arreglo (Ejercicio 7 parte 2)   
-     int val;
-    char number[5];
+    int val;
+    scanf("%d", &val);
+    parr->size = val;
 
-    printf("Enter an integer number: ");
-    if (fgets(number, 5, stdin) != NULL)
+    parr->pdata = malloc(sizeof(int) * parr->size);
+
+    for (int i = 0; i < val; i++)
     {
-        number[strlen(number) -1 ] = 0;
-        printf("The string to convert is %s\n", number);
+        int num;
+        scanf("%d", &num);
+        parr->pdata[i] = num;
     }
-        for(u_int8_t i = 0; i < strlen(number);i++){
-        printf("age[%d]: %c\n",i,number[i]);
-    }
-    int successItems = sscanf(number,"%d",&val);
-    if(successItems == 1){
-        printf("val: %d\n", val);
-    }
-    else{
-        printf("sscanf fails\n");
-    }
-    
 
-    exit(EXIT_SUCCESS);
     //Crear el vector en el heap
     
 }
@@ -66,6 +57,7 @@ void getArray(struct array *parr)
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
     //Leer cada elemento y comparar el arreglo
+
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
