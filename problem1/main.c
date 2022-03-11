@@ -36,12 +36,60 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
+    //Leer el tamaño del arreglo (Ejercicio 7 parte 2)   
+    int val;
+    scanf("%d", &val);
+    parr->size = val;
+
+    parr->pdata = malloc(sizeof(int) * parr->size);
+
+    for (int i = 0; i < val; i++)
+    {
+        int num;
+        scanf("%d", &num);
+        parr->pdata[i] = num;
+    }
+
+    //Crear el vector en el heap
     
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
+    //Leer cada elemento y comparar el arreglo
+    arrOut->pdata = malloc(sizeof(int));
+    int arrGl = 0;
+   
+    for (int i = 0; i < arrIn1->size; i++) 
+    {
+        for(int j= 0; j<arrIn2->size; j++)
+
+            if (*(arrIn1->pdata+i) == *(arrIn2->pdata+j))
+            {
+            
+                int bool = 0;
+                for (int k = 0; k < arrGl; k++)
+                {
+                    if (*(arrOut->pdata + k) == *(arrIn1 -> pdata + i))
+                    {
+                        bool = 1; 
+                    }
+                }
+
+                if (bool != 1)
+                {
+                    *(arrOut->pdata + arrGl) = *(arrIn1->pdata + i);
+                        arrGl++;         
+                }
+
+                bool = 0; 
+            }      
+    }
+
+    arrOut->size = arrGl;
+    arrOut->pdata = realloc(arrOut->pdata, sizeof(int) * arrGl);
     
+
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
